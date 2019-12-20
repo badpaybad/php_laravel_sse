@@ -22,14 +22,14 @@ https://docs.google.com/drawings/d/1DvaYDm2OtOsw7py2K1JDAOB4aKPhH5lan_KnT8_L7MY/
 
 # Javascript in your web
 
-const swUrl = '{{ asset("js/webpushnotification/notificationwebworker.js") }}?c=' + encodeURIComponent('CoWebNotification:UserOnline:<?php echo \Auth::user()->tenant_id ."_". \Auth::user()->id ?>')
-        +'&s='+encodeURIComponent('co{{\Auth::user()->id}}');
+				const swUrl = '{{ asset("js/webpushnotification/notificationwebworker.js") }}?c=' + encodeURIComponent('CoWebNotification:UserOnline:<?php echo \Auth::user()->tenant_id ."_". \Auth::user()->id ?>')
+					+'&s='+encodeURIComponent('co{{\Auth::user()->id}}');
 
-  var myWorker = new SharedWorker (swUrl);    
-            myWorker.port.onmessage=function(e){
-		//todo: do smth with your: e.data
-            };
-            myWorker.port.start();
+				  var myWorker = new SharedWorker (swUrl);    
+					    myWorker.port.onmessage=function(e){
+						//todo: do smth with your: e.data
+					    };
+					    myWorker.port.start();
 
 # php code to push data to web browser
 
