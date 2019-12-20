@@ -33,7 +33,7 @@ https://docs.google.com/drawings/d/1DvaYDm2OtOsw7py2K1JDAOB4aKPhH5lan_KnT8_L7MY/
 
 # php code to push data to web browser
 
-$this->sse = new EventListenerHelper(env('REDIS_HOST'), env('REDIS_PORT'), env('REDIS_PASSWORD'), env('REDIS_NOTI_DB'));  
- $this->sse->SendNotifyToUser($user->tenant_id,$user->id,json_encode(
-            array("datas"=>
-                json_encode(array("title"=>"ping at ". Carbon::now(), "body"=>"Hello ".$user->username))    )    ));
+					$this->sse = new EventListenerHelper(env('REDIS_HOST'), env('REDIS_PORT'), env('REDIS_PASSWORD'), env('REDIS_NOTI_DB'));  
+					 $this->sse->SendNotifyToUser($user->tenant_id,$user->id,json_encode(
+						    array("datas"=>
+							json_encode(array("title"=>"ping at ". Carbon::now(), "body"=>"Hello ".$user->username))    )    ));
