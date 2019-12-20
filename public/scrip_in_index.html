@@ -1,0 +1,14 @@
+  const swUrl = '{{ asset("js/webpushnotification/notificationwebworker.js") }}?c=' + encodeURIComponent('CoWebNotification:UserOnline:<?php echo \Auth::user()->tenant_id ."_". \Auth::user()->id ?>')
+        +'&s='+encodeURIComponent('co{{\Auth::user()->id}}');//+ new Date().getTime() ;
+
+        // var myworker = new Worker (swUrl);    
+        // myworker.onmessage=function(e){
+        //     WebSystemNotification.showToastr(e.data);
+        // };
+
+            var myWorker = new SharedWorker (swUrl);    
+            myWorker.port.onmessage=function(e){
+                WebSystemNotification.showToastr(e.data);
+            };
+
+            myWorker.port.start();
