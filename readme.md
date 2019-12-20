@@ -1,6 +1,6 @@
 # In your laravel project
 
-Pull git and copy keep structure file file and folder
+Pull git and copy keep structure files and folders
 
 # Require
 
