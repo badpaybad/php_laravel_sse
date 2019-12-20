@@ -1,5 +1,6 @@
 # In your laravel project
 
+Simple SSE implement with laravel
 Pull git and copy keep structure files and folders
 
 # Require
