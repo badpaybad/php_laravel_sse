@@ -1,7 +1,9 @@
-#In your laravel project
+# In your laravel project
+
 Pull git and copy keep structure file file and folder
 
-#Require
+# Require
+
 - REDIS server, work as queue
 - Html5 support
 - SharedWorker browser support
@@ -13,12 +15,13 @@ Pull git and copy keep structure file file and folder
 				REDIS_NOTI_DB=15
 
 
-#Here description in diagram and code usage
+# Here description in diagram and code usage
 
 https://docs.google.com/drawings/d/1DvaYDm2OtOsw7py2K1JDAOB4aKPhH5lan_KnT8_L7MY/edit?usp=sharing
 
-#javascript in your web
-onst swUrl = '{{ asset("js/webpushnotification/notificationwebworker.js") }}?c=' + encodeURIComponent('CoWebNotification:UserOnline:<?php echo \Auth::user()->tenant_id ."_". \Auth::user()->id ?>')
+# Javascript in your web
+
+const swUrl = '{{ asset("js/webpushnotification/notificationwebworker.js") }}?c=' + encodeURIComponent('CoWebNotification:UserOnline:<?php echo \Auth::user()->tenant_id ."_". \Auth::user()->id ?>')
         +'&s='+encodeURIComponent('co{{\Auth::user()->id}}');
 
   var myWorker = new SharedWorker (swUrl);    
@@ -27,7 +30,8 @@ onst swUrl = '{{ asset("js/webpushnotification/notificationwebworker.js") }}?c='
             };
             myWorker.port.start();
 
-#php code to push data to web browser
+# php code to push data to web browser
+
 $this->sse = new EventListenerHelper(env('REDIS_HOST'), env('REDIS_PORT'), env('REDIS_PASSWORD'), env('REDIS_NOTI_DB'));  
  $this->sse->SendNotifyToUser($user->tenant_id,$user->id,json_encode(
             array("datas"=>
