@@ -1,7 +1,9 @@
 # In your laravel project
 
-Simple SSE implement with laravel
-Pull git and copy keep structure files and folders
+#### Simple SSE implement with laravel
+#### Pull git and copy keep structure files and folders
+
+### latest laravel check here https://github.com/badpaybad/sse_intergrated_with_laravel
 
 # Require
 
