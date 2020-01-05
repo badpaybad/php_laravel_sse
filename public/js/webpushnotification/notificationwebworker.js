@@ -1,7 +1,8 @@
 self.importScripts('/js/webpushnotification/eventsourcereceiver.js');
-var url=new URL(location);
-const channel = url.searchParams.get('c');    
-const subscriber = url.searchParams.get('s');
+var url=new URL(location);var channel = url.searchParams.get('c');    
+var subscriber = url.searchParams.get('s');
+
+subscriber=new Date().getTime();
 
 PushServer.init();
 
